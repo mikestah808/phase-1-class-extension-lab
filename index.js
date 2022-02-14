@@ -3,7 +3,6 @@
 
 class Polygon{
     constructor(arrOfIntegers){
-        // console.log(arrOfIntegers);
         this.arrOfIntegers = arrOfIntegers
     }
 
@@ -21,10 +20,37 @@ class Polygon{
 }
 
 class Triangle extends Polygon {
+    get isValid(){
+        // console.log(this.arrOfIntegers);
+        let side1 = this.arrOfIntegers[0]
+        let side2 = this.arrOfIntegers[1]
+        let side3 = this.arrOfIntegers[2]
+        return((side1 + side2 > side3)&&(side1 + side3 > side2)&&(side2 +side3 > side1))
 
+    }
 }
 
 
 class Square extends Polygon {
 
+    get isValid(){
+        // console.log(this.arrOfIntegers);
+        let side1 = this.arrOfIntegers[0]
+        let side2 = this.arrOfIntegers[1]
+        let side3 = this.arrOfIntegers[2]
+        let side4 = this.arrOfIntegers[3]
+
+        return((side1 === side2)&&(side1=== side3)&&(side1 === side4))
+        
+    }
+
+    get area(){
+        console.log(this.arrOfIntegers);
+        let side1 = this.arrOfIntegers[0]
+        let side2 = this.arrOfIntegers[1]
+        return side1 * side2;
+    }
 }
+
+
+let triangle = new Triangle(5)
